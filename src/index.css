@@ -1,9 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Work+Sans:wght@400;500&display=swap');
 body{
   background: #fdfbfb;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #ebedee, #cccaca, #fdf9ed);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, rgba(217, 238, 255, 0.5), #ffffff, #fdf9ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-font-family: Work Sans,sans-serif;
+
+}
+
+/* section:nth-child(odd) {
+
+} */
+
+.skills:nth-child(odd){
+  border-radius: 0.625rem;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  padding: 1rem;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 100%;
+}
+
+svg {
+  height:30px;
+  margin-bottom: 5px; 
+  padding-top: 5px;
+}
+
+p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.lead {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .section-container {
@@ -13,9 +48,13 @@ font-family: Work Sans,sans-serif;
 .logo {
     color: black;
     text-decoration: none;
-    font-size: 30px;
-    font-weight: 300;
-    font-family: 'Nunito', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.display-3,
+.display-6 {
+  font-family: 'Manrope', sans-serif;
 }
 
 .header-shadow{
@@ -29,6 +68,8 @@ font-family: Work Sans,sans-serif;
 
 .nav-masthead .nav-link {
   color: rgba(0, 0, 0);
+  font-size: 16px;
+  font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -52,8 +93,23 @@ footer a:hover {
   color: rgb(151, 151, 151);
 }
 
+.hidden {
+  opacity: 0;
+  transition: all 3s;
+}
+
+.show {
+  opacity: 1;
+}
+
 @media (min-width: 992px) { 
   .section-container {
   max-width: 80em;
 }
+}
+
+@media (min-width: 520px) {
+  .smpadding {
+    padding-right: 45px;
+  }
 }
