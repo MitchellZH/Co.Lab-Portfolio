@@ -45,19 +45,13 @@ function App() {
 
   return (
     <>
-      <div style={{ minHeight: "100vh" }}>
+      <div style={{ minHeight: "100vh" }} id="#">
         <header
           className="navbar fixed-top mx-auto p-3 header-shadow"
           style={{ backgroundColor: "#ffffff" }}
         >
           <div className="container">
-            <a
-              className="logo"
-              href=""
-              onClick={() => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            >
+            <a className="logo" href="#">
               <img
                 src={logo}
                 alt="portfolio logo"
@@ -195,7 +189,7 @@ function App() {
           <section
             className="container hidden"
             id="aboutme"
-            style={{ paddingTop: "160px" }}
+            style={{ paddingTop: "220px" }}
           >
             <div className="row align-items-center py-5">
               <div className="col-12 col-lg-5 pb-5 pt-3 d-flex justify-content-center align-self-start">
@@ -208,17 +202,11 @@ function App() {
               <div className="col-lg-6 align-self-start">
                 <h3 className="display-6 1h-1 mb-3">About Me.</h3>
                 <p className="lead">
-                  Hello! I'm a full stack developer, specializing in web
-                  development specifically. Some of my passions are learning new
-                  technologies, working collaboratively to make quality products
-                  and finding solutions to complex problems. Some of the
-                  technologies I've made apps with so far include JavaScript,
-                  TypeScript, React, Python, Flask, PostgreSql, Git, Scrum and
-                  more. I really enjoy the art of programming and am always
-                  striving to perfect my craft. My goals are to keep learning
-                  new technologies, keep improving on my current skill set and
-                  to continue to grow a great reputation through the quality of
-                  my work.
+                  Hello! I'm a full-stack developer, that specializes in making
+                  clean, scalable code. I make apps with many technologies,
+                  including React, Flask, PostgreSQL, Firebase and more. My goal
+                  is to contribute my technical skills to quality apps that
+                  solve real world problems.
                 </p>
               </div>
             </div>
@@ -239,25 +227,44 @@ function App() {
                 </h3>
               </div>
             </div>
+            <div className="row d-flex flex-row">
+              <div className="col d-flex ms-5">
+                <h4>
+                  Frontend:{" "}
+                  <span className="lead">
+                    React, Typescript, JavaScript, HTML, CSS, Bootstrap, MUI
+                  </span>
+                </h4>
+              </div>
+            </div>
+            <div className="row d-flex flex-row">
+              <div className="col d-flex ms-5">
+                <h4>
+                  Database:{" "}
+                  <span className="lead">PostgreSQL, MongoDB, Firebase</span>
+                </h4>
+              </div>
+            </div>
+            <div className="row d-flex flex-row">
+              <div className="col d-flex ms-5">
+                <h4>
+                  Backend: <span className="lead">Python, Flask</span>
+                </h4>
+              </div>
+            </div>
+            <div className="row d-flex flex-row">
+              <div className="col d-flex ms-5">
+                <h4>
+                  Others: <span className="lead">Git, Agile</span>
+                </h4>
+              </div>
+            </div>
             <div className="row d-flex flex-row align-items-center">
               <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
                 <div
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  Accessibility{" "}
-                  <img
-                    src="https://img.icons8.com/officel/48/000000/accessibility2.png"
-                    alt="accessibility"
-                  />
-                </div>
-              </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
-                  React{" "}
                   <img
                     src="https://img.icons8.com/color/48/000000/react-native.png"
                     alt="react"
@@ -269,7 +276,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  TypeScript{" "}
                   <img
                     src="https://img.icons8.com/color/48/000000/typescript.png"
                     alt="typescript"
@@ -281,7 +287,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  JavaScript{" "}
                   <img
                     src="https://img.icons8.com/color/48/000000/javascript.png"
                     alt="javascript"
@@ -293,7 +298,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  Python{" "}
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png"
                     alt="python"
@@ -318,7 +322,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  HTML{" "}
                   <img
                     src="https://img.icons8.com/color/48/000000/html-5.png"
                     alt="html"
@@ -330,7 +333,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  CSS{" "}
                   <img
                     src="https://img.icons8.com/color/48/000000/css3.png"
                     alt="css"
@@ -342,7 +344,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  Bootstrap{" "}
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/640px-Bootstrap_logo.svg.png"
                     alt="bootstrap"
@@ -355,7 +356,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  Material UI{" "}
                   <img
                     src="https://mui.com/static/logo.png"
                     alt="material ui"
@@ -369,7 +369,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  PostgreSQL{" "}
                   <img
                     src="https://img.icons8.com/color/48/000000/postgreesql.png"
                     alt="postgresQl"
@@ -381,7 +380,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  MongoDB{" "}
                   <img
                     src="https://img.icons8.com/color/48/000000/mongodb.png"
                     alt="mongoDB"
@@ -393,7 +391,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  Firebase{" "}
                   <img
                     src="https://img.icons8.com/color/48/000000/firebase.png"
                     alt="firebase"
@@ -405,7 +402,6 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  Git{" "}
                   <img
                     src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
                     alt="git"
@@ -418,7 +414,7 @@ function App() {
                   className="skills lead hidden"
                   style={{ backgroundColor: "#e4f2fa" }}
                 >
-                  Agile <img src={agile} alt="agile" />
+                  <img src={agile} alt="agile" />
                 </div>
               </div>
             </div>
@@ -467,7 +463,8 @@ function App() {
                         <h6>Description:</h6>
                         <p>
                           This app allows users to search through and save
-                          recipes after the've created an account. Users can also upload a profile pic.
+                          recipes after the've created an account. Users can
+                          also upload a profile pic.
                         </p>
                         <a
                           href="https://reciperover.netlify.app/"
@@ -595,19 +592,6 @@ function App() {
                           }}
                         >
                           Go To Website
-                        </a>
-                        <a
-                          href="https://github.com/MitchellZH/mzhfitness"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn"
-                          style={{
-                            background: "#ffcb37",
-                            marginTop: "20px",
-                            fontWeight: "500",
-                          }}
-                        >
-                          Visit Repository
                         </a>
                       </div>
                     </div>
