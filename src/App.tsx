@@ -3,7 +3,6 @@ import sticker from "./assets/layers.png";
 import logo from "./assets/logo.png";
 import picture from "./assets/mitchellpicture.jpg";
 import agile from "./assets/icons8-agile-48.png";
-import fitness from "./assets/mzh-fitness-landing-page-Copy.png";
 import sedap from "./assets/sedap-landing-page.png";
 import reciperover from "./assets/reciperover.png";
 
@@ -17,11 +16,11 @@ function App() {
     const response = await fetch(pic);
     if (response.ok) {
       const data = await response.json();
-      setDog(data[0].url)
+      setDog(data[0].url);
     }
-  }
+  };
 
-  const observer = useRef<IntersectionObserver | null>(null); // Initialize as null
+  const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     observer.current = new IntersectionObserver((entries) => {
@@ -33,9 +32,8 @@ function App() {
     });
 
     const hiddenElements = document.querySelectorAll(".hidden");
-    hiddenElements.forEach((el) => observer.current!.observe(el)); // Use the non-null assertion here
+    hiddenElements.forEach((el) => observer.current!.observe(el));
 
-    // Cleanup the observer when the component unmounts
     return () => {
       if (observer.current) {
         hiddenElements.forEach((el) => observer.current!.unobserve(el));
@@ -83,10 +81,7 @@ function App() {
 
         <main style={{ marginTop: "150px" }}>
           <section className="container-fluid row section-container p-5 mx-auto">
-            <div
-              className="col-12 col-lg-6 my-auto mx-sm-auto"
-              style={{ marginLeft: "50px" }}
-            >
+            <div className="col-12 col-lg-6 my-auto">
               <p className="display-2" style={{ fontWeight: "300" }}>
                 Welcome to My Portfolio
               </p>
@@ -94,49 +89,47 @@ function App() {
                 Mitchell Hamm -{" "}
                 <span style={{ color: "#72cdaa" }}>Full-Stack Engineer</span>
               </p>
-              <a
-                href="https://github.com/MitchellZH"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-lg btn-dark border-white"
-              >
-                Github
-                <i className="fa-brands fa-github ms-2"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/mitchell-hamm-dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-lg btn-dark border-white"
-              >
-                LinkedIn
-                <i className="fa-brands fa-linkedin ms-2"></i>
-              </a>
-              <br />
-              <a
-                href="https://docs.google.com/document/d/1KjWbHEnRVznwy9Vj4aGxa_iAusvdQBU_hVtirLCxnZ4/edit?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-lg btn-dark border-white"
-              >
-                Resume<i className="fa-solid fa-file ms-2"></i>
-              </a>
-              <button
-                type="button"
-                data-bs-toggle="modal"
-                className="btn btn-lg btn-dark border-white"
-                data-bs-target="#dogModal"
-                onClick={() => {
-                  dogData();
-                }}
-              >
-                Dog API <i className="fa-solid fa-dog ms-2"></i>
-              </button>
+              <div className="btn-group">
+                <a
+                  href="https://github.com/MitchellZH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-lg btn-dark border-white"
+                >
+                  Github
+                  <i className="fa-brands fa-github ms-2"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/mitchell-hamm-dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-lg btn-dark border-white"
+                >
+                  LinkedIn
+                  <i className="fa-brands fa-linkedin ms-2"></i>
+                </a>
+                <a
+                  href="https://docs.google.com/document/d/1KjWbHEnRVznwy9Vj4aGxa_iAusvdQBU_hVtirLCxnZ4/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-lg btn-dark border-white"
+                >
+                  Resume<i className="fa-solid fa-file ms-2"></i>
+                </a>
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  className="btn btn-lg btn-dark border-white"
+                  data-bs-target="#dogModal"
+                  onClick={dogData}
+                >
+                  Dog <i className="fa-solid fa-dog ms-2"></i>
+                </button>
+              </div>
             </div>
-            <div className="col-lg-5">
+            <div className="col-12 col-lg-6">
               <img
-                className="mt-5"
-                style={{ maxWidth: "100%" }}
+                className="img-fluid mt-5 ms-lg-5"
                 src={sticker}
                 alt="software design sticker"
               />
@@ -199,7 +192,7 @@ function App() {
                   alt="Picture of Mitchell"
                 />
               </div>
-              <div className="col-lg-6 align-self-start">
+              <div className="col-12 col-lg-7 align-self-start">
                 <h3 className="display-6 1h-1 mb-3">About Me.</h3>
                 <p className="lead">
                   Hello! I'm a full-stack developer, that specializes in making
@@ -227,8 +220,8 @@ function App() {
                 </h3>
               </div>
             </div>
-            <div className="row d-flex flex-row">
-              <div className="col d-flex ms-5">
+            <div className="row d-flex flex-row ms-5">
+              <div className="col-12 col-lg-6">
                 <h4>
                   Frontend:{" "}
                   <span className="lead">
@@ -236,68 +229,50 @@ function App() {
                   </span>
                 </h4>
               </div>
-            </div>
-            <div className="row d-flex flex-row">
-              <div className="col d-flex ms-5">
+              <div className="col-12 col-lg-6">
                 <h4>
                   Database:{" "}
                   <span className="lead">PostgreSQL, MongoDB, Firebase</span>
                 </h4>
               </div>
-            </div>
-            <div className="row d-flex flex-row">
-              <div className="col d-flex ms-5">
+              <div className="col-12 col-lg-6">
                 <h4>
                   Backend: <span className="lead">Python, Flask</span>
                 </h4>
               </div>
-            </div>
-            <div className="row d-flex flex-row">
-              <div className="col d-flex ms-5">
+              <div className="col-12 col-lg-6">
                 <h4>
                   Others: <span className="lead">Git, Agile</span>
                 </h4>
               </div>
             </div>
             <div className="row d-flex flex-row align-items-center">
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://img.icons8.com/color/48/000000/react-native.png"
                     alt="react"
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://img.icons8.com/color/48/000000/typescript.png"
                     alt="typescript"
                   ></img>
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://img.icons8.com/color/48/000000/javascript.png"
                     alt="javascript"
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png"
                     alt="python"
@@ -305,11 +280,8 @@ function App() {
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://cdn.iconscout.com/icon/free/png-256/free-flask-51-285137.png?f=webp"
                     alt="flask"
@@ -317,33 +289,24 @@ function App() {
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://img.icons8.com/color/48/000000/html-5.png"
                     alt="html"
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://img.icons8.com/color/48/000000/css3.png"
                     alt="css"
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/640px-Bootstrap_logo.svg.png"
                     alt="bootstrap"
@@ -351,11 +314,8 @@ function App() {
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://mui.com/static/logo.png"
                     alt="material ui"
@@ -364,44 +324,32 @@ function App() {
                 </div>
               </div>
 
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://img.icons8.com/color/48/000000/postgreesql.png"
                     alt="postgresQl"
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://img.icons8.com/color/48/000000/mongodb.png"
                     alt="mongoDB"
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://img.icons8.com/color/48/000000/firebase.png"
                     alt="firebase"
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img
                     src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
                     alt="git"
@@ -409,11 +357,8 @@ function App() {
                   />
                 </div>
               </div>
-              <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                <div
-                  className="skills lead hidden"
-                  style={{ backgroundColor: "#e4f2fa" }}
-                >
+              <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                <div className="skills lead hidden skill-icon">
                   <img src={agile} alt="agile" />
                 </div>
               </div>
@@ -437,7 +382,7 @@ function App() {
                 </div>
               </div>
               <div className="row">
-                <div className="card mb-3 px-0" style={{ maxWidth: "540px;" }}>
+                <div className="card mb-3 px-0">
                   <div className="row g-0">
                     <div className="col-md-4">
                       <img
@@ -497,64 +442,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <div className="card mb-3 px-0" style={{ maxWidth: "540px;" }}>
-                  <div className="row flex-row-reverse g-0">
-                    <div className="col-md-4">
-                      <img
-                        src={fitness}
-                        className="img-fluid rounded-start"
-                        alt="picture of mzh fitness landing page"
-                      />
-                    </div>
-                    <div className="col-md-8 pe-1">
-                      <div className="card-body">
-                        <h5
-                          className="display-6 mb-4"
-                          style={{ fontSize: "1.75rem" }}
-                        >
-                          MZH Fitness
-                        </h5>
-                        <hr />
-                        <h6>Technologies:</h6>
-                        <p>HTML, Material UI, React.js, and RapidAPI</p>
-                        <h6>Description:</h6>
-                        <p>
-                          This is a fitness app built in React, that allows
-                          users to search and filter through a vast database of
-                          exercises with helpful info and videos about each one.
-                        </p>
-                        <a
-                          href="https://mzh-fitness.com/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn"
-                          style={{
-                            background: "#71cca9",
-                            marginTop: "20px",
-                            marginRight: "20px",
-                            fontWeight: "500",
-                          }}
-                        >
-                          Go To Website
-                        </a>
-                        <a
-                          href="https://github.com/MitchellZH/mzhfitness"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn"
-                          style={{
-                            background: "#ffcb37",
-                            marginTop: "20px",
-                            fontWeight: "500",
-                          }}
-                        >
-                          Visit Repository
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="card mb-3 px-0" style={{ maxWidth: "540px;" }}>
+                <div className="card mb-3 px-0">
                   <div className="row g-0">
                     <div className="col-md-4">
                       <img
